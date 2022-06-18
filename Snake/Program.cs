@@ -10,16 +10,14 @@ namespace Snake
 	{
 		static void Main( string[] args )
 		{
-			//Console.SetBufferSize( 80, 25 );
-
-			Walls walls = new Walls( 80, 25 );
+			Walls walls = new Walls( 40, 25 );
 			walls.Draw();
 		
 			Point p = new Point( 4, 5, '#' );
 			Snake snake = new Snake( p, 4, Direction.RIGHT );
 			snake.Draw();
 
-			FoodCreator foodCreator = new FoodCreator( 80, 25, '@' );
+			FoodCreator foodCreator = new FoodCreator( 40, 25, '@' );
 			Point food = foodCreator.CreateFood();
 			food.Draw();
 
@@ -53,8 +51,8 @@ namespace Snake
 
 		static void WriteGameOver()
 		{
-			int xOffset = 25;
-			int yOffset = 8;
+			int xOffset = 5;
+			int yOffset = 10;
 			Console.ForegroundColor = ConsoleColor.White;
 			Console.SetCursorPosition( xOffset, yOffset++ );
 			WriteText( "============================", xOffset, yOffset++ );
